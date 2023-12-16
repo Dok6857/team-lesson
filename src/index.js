@@ -23,14 +23,34 @@ function submitHandler(event) {
   event.preventDefault();
 
   // const { taskName, taskText } = event.target.elements;
+  
+
   const taskNameValue = event.target.elements.taskName.value;
   const taskTextValue = event.target.elements.taskText.value;
+  const objValue = {
+    taskNameValue,
+    taskTextValue,
+    id: Math.random(),
+  }
+  addToLocalStarage(objValue);
+
+
 
   taskList.insertAdjacentHTML(
     'afterbegin',
     createMarkupItem(taskNameValue, taskTextValue)
   );
 }
+
+const STORAGE_KEY = "tasks";
+
+
+function addToLocalStarage(task){
+ const arrayTasks = localStorage.getItem(STORAGE_KEY) ? JSON.parse(localStorage.getItem(STORAGE_KEY)): [];
+  arrayTasks.push(task);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(arrayTasks));
+}
+
 
 function createMarkupItem(title, description) {
   return `
@@ -41,3 +61,4 @@ function createMarkupItem(title, description) {
     </li>
     `;
 }
+
