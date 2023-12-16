@@ -1,0 +1,2 @@
+!function(){var t=document.querySelector("#task-form"),e=document.getElementById("task-list");t.addEventListener("submit",(function(t){t.preventDefault();var n=t.target.elements.taskName.value,a=t.target.elements.taskText.value;e.insertAdjacentHTML("afterbegin",(s=n,l=a,'\n    <li class="task-list-item">\n        <button class="task-list-item-btn">Удалить</button>\n        <h3>'.concat(s,"</h3>\n        <p>").concat(l,"</p>\n    </li>\n    ")));var s,l}))}();
+//# sourceMappingURL=index.8b8d4086.js.map

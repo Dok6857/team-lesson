@@ -1,0 +1,2 @@
+const t=document.querySelector("#task-form"),e=document.getElementById("task-list");t.addEventListener("submit",(function(t){t.preventDefault();const n=t.target.elements.taskName.value,s=t.target.elements.taskText.value;e.insertAdjacentHTML("afterbegin",(a=n,l=s,`\n    <li class="task-list-item">\n        <button class="task-list-item-btn">Удалить</button>\n        <h3>${a}</h3>\n        <p>${l}</p>\n    </li>\n    `));var a,l}));
+//# sourceMappingURL=index.e3e68803.js.map
